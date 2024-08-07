@@ -17,7 +17,8 @@ import Picker from "@emoji-mart/react";
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../context/ChatProvider";
-const ENDPOINT = "http://localhost:5555"; //  -> After deployment
+const ENDPOINT = "https://chat-app-v2-2ysq.onrender.com"; //deployment
+// "http://localhost:5555"; //local
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -280,7 +281,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                     zIndex="10"
                     mt={2}
                   >
-                    <Picker onSelect={addEmoji} />
+                    <Picker onEmojiSelect={addEmoji} />
                   </Box>
                 )}
               </Box>
