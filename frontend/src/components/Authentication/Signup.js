@@ -107,17 +107,11 @@ const Signup = () => {
       const data = new FormData();
       data.append("file", pics);
       data.append("upload_preset", "mern-app");
-      data.append(
-        "cloud_name",
-        `${process.env.REACT_APP_CLOUD_NAME_CLOUDINARY}`
-      );
-      fetch(
-        `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME_CLOUDINARY}/image/upload`,
-        {
-          method: "post",
-          body: data,
-        }
-      )
+      data.append("cloud_name", "dxcmtle1z");
+      fetch(`https://api.cloudinary.com/v1_1/dxcmtle1z/image/upload`, {
+        method: "post",
+        body: data,
+      })
         .then((res) => res.json())
         .then((data) => {
           setPic(data.url.toString());
